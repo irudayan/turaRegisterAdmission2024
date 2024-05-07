@@ -190,13 +190,9 @@ include_once('header.php');
 									$weakeryes = $_POST['weakeryes'];
 									$weakcert = isset($_POST['weakcert']) ? $_POST['weakcert'] : '';
 									$tura_address = $_POST['tura_address'];
-									$tura_pincode = $_POST['tura_pincode'];
-									$tura_contact = $_POST['tura_contact'];
 									$adhar_number = $_POST['adhar_number'];
 									$home_address = $_POST['home_address'];
-									$p_pincode = $_POST['p_pincode'];
 									$p_state = $_POST['p_state'];
-									$p_contact = $_POST['p_contact'];
 									$studying = $_POST['studying'];
 									$rollno1 = isset($_POST['rollno1']) ? $_POST['rollno1'] : '';
 									$rollno2 = isset($_POST['rollno2']) ? $_POST['rollno2'] : '';
@@ -271,13 +267,9 @@ include_once('header.php');
 										weakcert='" . $weakcert . "', 
 										religion='" . $religion . "', 
 										tura_address='" . $tura_address . "', 
-										tura_pincode='" . $tura_pincode . "', 
-										tura_contact='" . $tura_contact . "', 
 										adhar_number='" . $adhar_number . "', 
 										home_address='" . $home_address . "', 
-										p_pincode='" . $p_pincode . "', 
 										p_state='" . $p_state . "', 
-										p_contact='" . $p_contact . "', 
 										studying='" . $studying . "', 
 										rollno1='" . $rollno1 . "', 
 										rollno2='" . $rollno2 . "', 
