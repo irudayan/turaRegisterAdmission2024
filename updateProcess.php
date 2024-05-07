@@ -193,7 +193,7 @@ include_once('header.php');
 									$adhar_number = $_POST['adhar_number'];
 									$home_address = $_POST['home_address'];
 									$p_state = $_POST['p_state'];
-									$studying = $_POST['studying'];
+									$studying = isset($studying) ? $studying : 'No';
 									$rollno1 = isset($_POST['rollno1']) ? $_POST['rollno1'] : '';
 									$rollno2 = isset($_POST['rollno2']) ? $_POST['rollno2'] : '';
 									$f_name = $_POST['f_name'];
@@ -253,6 +253,7 @@ include_once('header.php');
 									$per_year = $_POST['per_year'];
 									$per_to = $_POST['per_to'];
 									$ins_address = $_POST['ins_address'];
+									$place = $_POST['place'];
 
 									try {
 
@@ -329,7 +330,8 @@ include_once('header.php');
 										vac_secondsem='" . $vac_secondsem . "',
 										per_year='" . $per_year . "',
 										per_to='" . $per_to . "',
-										ins_address='" . $ins_address . "'
+										ins_address='" . $ins_address . "',
+										place='" . $place . "'
 										
 
 										WHERE unique_id='" . $unique_id . "'";

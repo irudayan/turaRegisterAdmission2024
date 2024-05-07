@@ -32,9 +32,7 @@ include('config.php'); ?>
 
 				if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					if (isset($_POST['submit'])) {
-
 						$shift = isset($_POST['shift']) ? mysqli_real_escape_string($conn, $_POST['shift']) : '';
-
 						$app_name = mysqli_real_escape_string($conn, $_POST['app_name']);
 						$dob = $_POST['dob'];
 						$gender = mysqli_real_escape_string($conn, $_POST['gender']);
@@ -59,8 +57,8 @@ include('config.php'); ?>
 						//Username & Tranx
 						function RandomStringGenerator($n)
 						{
-							$generated_string = ""; // Variable which store final string  
-							$domain = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"; // Create a string with the 
+							$generated_string = "";
+							$domain = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // Create a string with the 
 							$len = strlen($domain); // Find the length of created string 
 							for ($i = 0; $i < $n; $i++) { // Loop to create random string 
 								$index = rand(0, $len - 1); // Generate a random index to pick characters 
@@ -68,7 +66,7 @@ include('config.php'); ?>
 							}
 							return $generated_string; // Return the randomly generated string 
 						}
-						$n = 7; // Driver code to test above function 
+						$n = 6; // Driver code to test above function 
 						$unique_id = RandomStringGenerator($n);
 
 						$reg_year = '2024';

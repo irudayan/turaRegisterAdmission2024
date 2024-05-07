@@ -1,39 +1,38 @@
 <?php include_once('header.php');
-include('config.php'); ?>
+// include('config.php'); 
+?>
 
 <?php
-// $dbhost = 'localhost';
-// // $dbuser = 'higradeonline';
-// $dbuser = 'colleged_onbosco_career';
-// // $dbpass = 'y8ahydu5u';
-// $dbpass = 'wzD[5xMw9~CU';
-// $dbname = 'colleged_onbosco_career_placement';
+$dbhost = 'localhost';
+$dbuser = 'root';
+$dbpass = '';
+$dbname = 'tura_admission';
 
-// //Connect Database
-// $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-// if (!$conn) {
-// 	die("ERROR: Could not connect. " . mysqli_connect_error());
-// }
+//Connect Database
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+if (!$conn) {
+	die("ERROR: Could not connect. " . mysqli_connect_error());
+}
 
 $id = $_GET['id'];
-$RegId = base64_decode($id);
-$RegYear = 2021;
+$unique_id = base64_decode($id);
+
 
 try {
-	//echo "here";
 	mysqli_query($conn, "begin");
-	$GetIdQuery = "Select email,mobile,AName,Programme,Shift from dbctura_ugadmission where RegYear='" . $RegYear . "' AND TStatus=0 AND RegId='" . $RegId . "'";
-	//print_r($GetIdQuery);
-	$result2 = mysqli_query($conn, $GetIdQuery);
+
+	$getIdQuery =
+		"Select email,mobile,app_name,shift from admission_2024 WHERE t_status=0 AND unique_id='" . $unique_id . "'";
+
+	$result2 = mysqli_query($conn, $getIdQuery);
+
 	$row = mysqli_fetch_array($result2);
-	//print_r($row);
-	//exit;
+
 	if ($row) {
 		$email = $row[0];
 		$mobile = $row[1];
-		$AName = $row[2];
-		$Programme = $row[3];
-		$Shift = $row[4];
+		$reg_no = $row[2];
+		$shift = $row[4];
 
 		date_default_timezone_set('Asia/Calcutta');
 		$datenow = date("d/m/Y h:m:s");
@@ -41,33 +40,32 @@ try {
 		require_once 'TransactionRequest.php';
 		$transactionRequest = new TransactionRequest();
 		// Setting all values here
-		$transactionRequest->setMode("live");
-		$transactionRequest->setLogin(109488);
-		$transactionRequest->setPassword("7c990bc2");
-		$transactionRequest->setProductId("COLLEGE");
-		$transactionRequest->setAmount(550);
+		$transactionRequest->setMode("test");
+		$transactionRequest->setLogin(197);
+		$transactionRequest->setPassword("Test@123");
+		$transactionRequest->setProductId("NSE");
+		$transactionRequest->setAmount(50);
 		$transactionRequest->setTransactionCurrency("INR");
 		$transactionRequest->setTransactionAmount(0);
-		$transactionRequest->setReturnUrl("https://donboscocollege.ac.in/OnlineAdmission2023/response.php");
+		$transactionRequest->setReturnUrl("http://localhost/1BProject/turaRegisterAdmission2024/response.php");
 		$transactionRequest->setClientCode(123);
-		$transactionRequest->setTransactionId($RegId);
+		$transactionRequest->setTransactionId($unique_id);
 		$transactionRequest->setTransactionDate($transactionDate);
-		$transactionRequest->setCustomerName($AName);
+		$transactionRequest->setCustomerName($app_name);
 		$transactionRequest->setCustomerEmailId($email);
 		$transactionRequest->setCustomerMobile($mobile);
-		$transactionRequest->setstudepartment($Programme);
-		$transactionRequest->setstushift($Shift);
+		$transactionRequest->setstushift($shift);
 		$transactionRequest->setCustomerBillingAddress("DBC Tura");
 		$transactionRequest->setCustomerAccount("639827");
-		$transactionRequest->setReqHashKey("464054992733902f41");
+		$transactionRequest->setReqHashKey("KEY123657234");
 		$url = $transactionRequest->getPGUrl();
 		header("Location: $url");
 		echo "<script>location='$url'</script>";
 		mysqli_query($conn, "commit");
 	} else {
+		echo "hrkjnodgn";
 
-
-		echo "<script>location='https://donboscocollege.ac.in/OnlineAdmission2023/'</script>";
+		echo "<script>location='http://localhost/1BProject/turaRegisterAdmission2024/'</script>";
 	}
 } catch (Exception $e) {
 	echo "transaction rolled back";

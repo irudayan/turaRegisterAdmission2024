@@ -367,10 +367,9 @@ include('config.php');
 																				<label class="custom-control-label" for="catering9">Yes</label>
 																			</div>
 																			<div class="d-inline-block custom-control custom-radio">
-																				<input type="radio" name="disability" <?php echo ($disability == 'No') ? 'checked' : '' ?> value="No" class="custom-control-input" onchange="disablefunction(this)" id="catering10" autocomplete="off" required>
+																				<input type="radio" name="disability" <?php echo ($disability == 'No' || empty($disability)) ? 'checked' : '' ?> value="No" class="custom-control-input" onchange="disablefunction(this)" id="catering10" autocomplete="off" required>
 																				<label class="custom-control-label" for="catering10">No</label>
 																			</div>
-
 																		</div>
 																	</div>
 																</div>
@@ -389,12 +388,13 @@ include('config.php');
 																				<label class="custom-control-label" for="cateringweakeryes">Yes</label>
 																			</div>
 																			<div class="d-inline-block custom-control custom-radio">
-																				<input type="radio" name="weakeryes" <?php echo ($weakeryes == 'No') ? 'checked' : '' ?> value="No" class="custom-control-input" onchange="weakerfunction(this)" id="cateringweakerno" autocomplete="off" required>
+																				<input type="radio" name="weakeryes" <?php echo ($weakeryes == 'No' || empty($weakeryes)) ? 'checked' : '' ?> value="No" class="custom-control-input" onchange="weakerfunction(this)" id="cateringweakerno" autocomplete="off" required>
 																				<label class="custom-control-label" for="cateringweakerno">No</label>
 																			</div>
 																		</div>
 																	</div>
 																</div>
+
 
 																<div class="col-md-4" style="" id="Ruralarea">
 																	<div class="form-group">
@@ -517,12 +517,12 @@ include('config.php');
 																	<div class="form-group">
 																		<div class="c-inputs-stacked">
 																			<div class="d-inline-block custom-control custom-radio">
-																				<input type="radio" name="studying" <?php echo ($studying == 'Yes') ? 'checked' : '' ?> value="Yes" class="custom-control-input" onchange="my_function(this)" id="catering7" autocomplete="off" required>
-																				<label class="custom-control-label" for="catering7">Yes</label>
+																				<input type="radio" name="studying" <?php echo ($studying == 'Yes') ? 'checked' : '' ?> value="Yes" class="custom-control-input" onchange="my_function(this)" id="studying_yes" autocomplete="off" required>
+																				<label class="custom-control-label" for="studying_yes">Yes</label>
 																			</div>
 																			<div class="d-inline-block custom-control custom-radio">
-																				<input type="radio" name="studying" <?php echo ($studying == 'No') ? 'checked' : '' ?> value="No" class="custom-control-input" onchange="my_function(this)" id="catering8" autocomplete="off" required>
-																				<label class="custom-control-label" for="catering8">No</label>
+																				<input type="radio" name="studying" <?php echo ($studying == 'No' || empty($studying)) ? 'checked' : '' ?> value="No" class="custom-control-input" onchange="my_function(this)" id="studying_no" autocomplete="off" required>
+																				<label class="custom-control-label" for="studying_no">No</label>
 																			</div>
 																		</div>
 																	</div>
@@ -530,16 +530,18 @@ include('config.php');
 																<div class="col-md-3" id="SCollege">
 																	<div class="form-group">
 																		<label for="rollno1">If Yes, Brother/Sister's Roll No </label>
-																		<input class="form-control" type="text" Placeholder="-Please Enter-" maxlength="10" value="<?php echo $rollno1; ?>" autocomplete="off" id="rollno1" name="rollno1" <?php if ($studying == 'No') { ?> disabled <?php } ?>>
+																		<input class="form-control" type="text" placeholder="-Please Enter-" maxlength="10" value="<?php echo $rollno1; ?>" autocomplete="off" id="rollno1" name="rollno1" <?php if ($studying == 'No' || empty($studying)) { ?> disabled <?php } ?>>
 																	</div>
 																</div>
 																<div class="col-md-3" id="SCollege1">
 																	<div class="form-group">
 																		<label for="rollno2">If Yes, Brother/Sister's Roll No</label>
-																		<input class="form-control" type="text" Placeholder="-Please Enter-" maxlength="10" value="<?php echo $rollno2; ?>" autocomplete="off" id="rollno2" name="rollno2" <?php if ($studying == 'No') { ?> disabled <?php } ?>>
+																		<input class="form-control" type="text" placeholder="-Please Enter-" maxlength="10" value="<?php echo $rollno2; ?>" autocomplete="off" id="rollno2" name="rollno2" <?php if ($studying == 'No' || empty($studying)) { ?> disabled <?php } ?>>
 																	</div>
 																</div>
 															</div>
+
+
 
 
 															<hr style="border-top: 1px solid #C0C0C0;">
@@ -731,11 +733,11 @@ include('config.php');
 																	<div class="form-group">
 																		<div class="c-inputs-stacked">
 																			<div class="d-inline-block custom-control custom-radio">
-																				<input type="radio" name="urban" value="urban" class="custom-control-input" onchange="Areafunction(this)" id="cateringUrban" autocomplete="off" required>
+																				<input type="radio" name="urban" value="urban" <?php echo (isset($_POST['urban']) && $_POST['urban'] == 'urban') ? 'checked' : 'checked'; ?> class="custom-control-input" onchange="Areafunction(this)" id="cateringUrban" autocomplete="off" required>
 																				<label class="custom-control-label" for="cateringUrban">Urban</label>
 																			</div>
 																			<div class="d-inline-block custom-control custom-radio">
-																				<input type="radio" name="urban" value="Rural" class="custom-control-input" onchange="Areafunction(this)" id="cateringRural" autocomplete="off" required>
+																				<input type="radio" name="urban" value="Rural" <?php echo (isset($_POST['urban']) && $_POST['urban'] == 'Rural') ? 'checked' : ''; ?> class="custom-control-input" onchange="Areafunction(this)" id="cateringRural" autocomplete="off" required>
 																				<label class="custom-control-label" for="cateringRural">Rural</label>
 																			</div>
 																		</div>
@@ -746,9 +748,10 @@ include('config.php');
 																	<div class="form-group">
 																		<label for="area">Area</label>
 																		<span class="danger">*</span>
-																		<input class="form-control" type="text" Placeholder="-Please Enter-" value="<?php echo isset($_POST['area']) ? $_POST['area'] : ''; ?>" autocomplete="off" onkeydown="upperCaseF(this)" placeholder="Mention Place" id="area" name="area" maxlength="50" disabled>
+																		<input class="form-control" type="text" Placeholder="-Please Enter-" value="<?php echo isset($_POST['area']) ? $_POST['area'] : ''; ?>" autocomplete="off" onkeydown="upperCaseF(this)" placeholder="Mention Place" id="area" name="area" maxlength="50" <?php echo (isset($_POST['urban']) && $_POST['urban'] == 'Rural') ? '' : 'disabled'; ?>>
 																	</div>
 																</div>
+
 
 
 															</div>
@@ -825,13 +828,22 @@ include('config.php');
 
 																			<td><input class="form-control" type=" text" value="" name="mark_percentage" placeholder="-Please Enter-" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" onkeydown="upperCaseF(this)" id="mark_percentage" autocomplete="off" maxlength="5" required></td>
 
-																			<td><input class="form-control" type="text" value="" name="division" placeholder="-Please Enter-" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" onkeydown="upperCaseF(this)" id="division" autocomplete="off" maxlength="5" required></td>
+																			<td><input class="form-control" type="text" value="" name="division" placeholder="-Please Enter-" id="division" autocomplete="off" maxlength="5" required></td>
 
 																			<td><input class="form-control" type="text" value="" name="rank" placeholder="-Please Enter-" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" onkeydown="upperCaseF(this)" id="rank" autocomplete="off" maxlength="3" required></td>
 
 																			<td><input class="form-control" type="text" value="" name="board_univ" id="board_univ" placeholder="-Please Enter-" onkeydown="upperCaseF(this)" autocomplete="off" maxlength="100" required></td>
 
-																			<td><input class="form-control" type="text" value="" name="reg_pvt" placeholder="-Please Enter-" onkeydown="upperCaseF(this)" id="reg_pvt" autocomplete="off" maxlength="50" required></td>
+																			<td>
+																				<select class="custom-select form-control" id="reg_pvt" name="reg_pvt" autocomplete="off" required>
+
+																					<option value="">-Please Select-</option>
+																					<option value="Regular">Regular </option>
+																					<option value="Private">Private</option>
+
+																				</select>
+																				<!-- <input class="form-control" type="text" value="" name="reg_pvt" placeholder="-Please Enter-" onkeydown="upperCaseF(this)" id="reg_pvt" autocomplete="off" maxlength="50" required> -->
+																			</td>
 																		</tr>
 																	</table>
 																	<br>
@@ -904,13 +916,20 @@ include('config.php');
 																<div class="col-md-2" style="padding-top: 30px; padding-left: 0px;">
 																	<input type="text" name="per_to" Placeholder="-Please Enter-" value="" ononinput="this.value = this.value.replace(/\D/g, '').slice(0, 4);" class="form-control" id="per_to" autocomplete="off" maxlength="4" required>
 																</div>
+																<!-- new -->
+																<div class="col-md-4">
+																	<div class="form-group row">
+																		<label for="place">Place</label>
+																		<span class="danger">*</span>
+																		<input class="form-control" type="text" value="" name="place" placeholder="-Please Enter-" id="place" autocomplete="off" maxlength="50" required>
+																	</div>
+																</div>
 															</div>
+
+
 
 															<hr style="border-top: 1px solid #C0C0C0;">
 															<br>
-
-
-
 															<h4 style="color: #123c73;font-weight:bold;font-family: cursive;font-size:20px;">MAJOR AND MINOR COURSES (For First Semester Choose any ONE)</h4><br>
 
 															<div class="row">
@@ -1669,51 +1688,42 @@ include('config.php');
 			}
 		}
 
+
 		function my_function(val) {
-			sibling = val.value;
-			if (sibling == 'Yes') {
-				// $('#SCollege').show();
-				// $('#SCollege').css("display", "visible");
-				// //$('#RollnoI').prop('required',true);
+			var isStudying = val.value === 'Yes';
+			var rollnoInput1 = document.getElementById("rollno1");
+			var rollnoInput2 = document.getElementById("rollno2");
 
-				// $('#SCollege1').show();
-				// $('#SCollege1').css("display", "visible");
-				// //$('#rollno2').prop('required',true);
-
-				$("#rollno1").removeAttr("disabled");
-				$("#rollno1").focus();
-				$('#rollno1').prop('required', true);
-
-				$("#rollno2").removeAttr("disabled");
-				$("#rollno2").focus();
-				$('#rollno2').prop('required', true);
-
-
-			} else if (sibling == 'No') {
-				// $('#SCollege').hide();
-				// $('#SCollege').css("display", "none");
-				// $('#RollnoI').prop('required',false); 
-
-				// $('#SCollege1').hide();
-				// $('#SCollege1').css("display", "none");
-				// $('#rollno2').prop('required',false);
-
-				$("#rollno1").attr("disabled", "disabled");
-				$('#rollno1').prop('required', false);
-				document.getElementById("rollno1").value = "";
-
-				$("#rollno2").attr("disabled", "disabled");
-				$('#rollno2').prop('required', false);
-				document.getElementById("rollno2").value = "";
+			if (isStudying) {
+				rollnoInput1.removeAttribute("disabled");
+				rollnoInput2.removeAttribute("disabled");
+				rollnoInput1.focus();
+				rollnoInput1.required = true;
+				rollnoInput2.required = true;
 			} else {
-				$("#rollno1").attr("disabled", "disabled");
-				$('#rollno1').prop('required', false);
-				document.getElementById("rollno1").value = "";
+				rollnoInput1.setAttribute("disabled", "disabled");
+				rollnoInput2.setAttribute("disabled", "disabled");
+				rollnoInput1.required = false;
+				rollnoInput2.required = false;
+				rollnoInput1.value = "";
+				rollnoInput2.value = "";
+			}
+		}
 
-				$("#rollno2").attr("disabled", "disabled");
-				$('#rollno2').prop('required', false);
-				document.getElementById("rollno2").value = "";
 
+
+		function weakerfunction(val) {
+			var isWeaker = val.value === 'Yes';
+			var weakcertInput = document.getElementById("weakcert");
+
+			if (isWeaker) {
+				weakcertInput.removeAttribute("disabled");
+				weakcertInput.focus();
+				weakcertInput.required = true;
+			} else {
+				weakcertInput.setAttribute("disabled", "disabled");
+				weakcertInput.required = false;
+				weakcertInput.value = "";
 			}
 		}
 
@@ -1752,25 +1762,6 @@ include('config.php');
 				RAreaInput.value = "";
 			}
 		}
-
-
-		function weakerfunction(val) {
-			var isWeaker = val.value === 'Yes'; // Check if the selected value is 'Yes'
-			var weakcertInput = document.getElementById("weakcert");
-
-			if (isWeaker) {
-				weakcertInput.removeAttribute("disabled");
-				weakcertInput.focus();
-				weakcertInput.required = true;
-			} else {
-				weakcertInput.setAttribute("disabled", "disabled");
-				weakcertInput.required = false;
-				weakcertInput.value = "";
-			}
-		}
-
-
-
 		$(document).ready(function() {
 			$("#checkbox1").on("change", function() {
 
