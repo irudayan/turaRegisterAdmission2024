@@ -186,13 +186,9 @@ include('config.php');
 											$weakeryes = $row[27];
 											$weakcert = $row[28];
 											$tura_address = $row[29];
-											$tura_pincode = $row[30];
-											$tura_contact = $row[31];
 											$adhar_number = $row[32];
 											$home_address = $row[33];
-											$p_pincode = $row[34];
 											$p_state = $row[35];
-											$p_contact = $row[36];
 											$studying = $row[37];
 											$rollno1 = $row[38];
 											$rollno2 = $row[39];
@@ -498,16 +494,7 @@ include('config.php');
 																			</div>
 																		</div>
 
-																		<div class="col-md-12">
-																			<div class="form-group row">
-																				<label for="p_contact">
-																					Contact No
-																					<span class="danger">*</span>
-																				</label>
-																				<input type="text" id="p_contact" name="p_contact" value="<?php echo $p_contact; ?>" title="Please Enter contact No" pattern="[1-9]{1}[0-9]{9}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" Placeholder="-Please Enter-" onkeypress="return isNumber(event)" minlength="10" maxlength="10" class="form-control" autocomplete="off">
 
-																			</div>
-																		</div>
 																	</div>
 																</div>
 																<div class="col-md-12">

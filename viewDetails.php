@@ -174,13 +174,9 @@ include('config.php');
 									$weakeryes = $rows[27];
 									$weakcert = $rows[28];
 									$tura_address = $rows[29];
-									$tura_pincode = $rows[30];
-									$tura_contact = $rows[31];
 									$adhar_number = $rows[32];
 									$home_address = $rows[33];
-									$p_pincode = $rows[34];
 									$p_state = $rows[35];
-									$p_contact = $rows[36];
 									$studying = $rows[37];
 									$rollno1 = $rows[38];
 									$rollno2 = $rows[39];
@@ -428,14 +424,7 @@ include('config.php');
 																	</div>
 																</div>
 
-																<div class="col-md-12">
-																	<div class="form-group row">
-																		<label for="tura_contact">
-																			Contact No
-																		</label>
-																		<input type="text" id="tura_contact" class="form-control" name="tura_contact" value="<?php echo $tura_contact; ?>" autocomplete="off" disabled>
-																	</div>
-																</div>
+
 
 																<div class="col-md-12">
 																	<div class="form-group row">
@@ -458,13 +447,6 @@ include('config.php');
 																	</div>
 																</div>
 
-																<div class="col-md-12">
-																	<div class="form-group row">
-																		<label for="p_pincode">Pincode</label>
-																		<input type="text" id="p_pincode" class="form-control" name="p_pincode" value="<?php echo $p_pincode; ?>" autocomplete="off" disabled>
-
-																	</div>
-																</div>
 
 																<div class="col-md-12">
 																	<div class="form-group row">
@@ -474,15 +456,6 @@ include('config.php');
 																	</div>
 																</div>
 
-																<div class="col-md-12">
-																	<div class="form-group row">
-																		<label for="p_contact">
-																			Contact No
-																		</label>
-
-																		<input type="text" id="p_contact" class="form-control" name="p_contact" value="<?php echo $p_contact; ?>" autocomplete="off" disabled>
-																	</div>
-																</div>
 															</div>
 														</div>
 														<div class="col-md-12">
