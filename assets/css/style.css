@@ -1,0 +1,180 @@
+/* ================================================================================================
+// 	File Name: style.scss
+// 	Description: Style for customization.
+// 	----------------------------------------------------------------------------------------------
+// 	Item Name: Chameleon Admin - Modern Bootstrap 4 WebApp & Dashboard HTML Template + UI Kit
+// 	Version: 1.0
+// 	Author: ThemeSelection
+// 	Author URL: https://themeselection.com/
+// ================================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+html body .content .content-wrapper {
+    padding: 2.2rem;
+    /* margin-top: 113px; */
+	margin-top: -26px;
+}
+
+.content-wrapper-before{
+	height: 280px !important;
+	background-image: linear-gradient(to right,#2d3e97,#32cafe) !important;
+}
+@media (max-width:767px){
+   .content-wrapper-before{
+      height:400px !important;
+   }
+   .full-view{
+      display:none !important;
+   }
+   .btn-glow{
+      padding: 0.5rem 0.7rem !important;
+	  font-size: 15px !important;
+	  width: 50% !important;
+   }
+   .online-reg{
+    margin-left: 0% !important;
+}
+.content-wrapper{
+    padding:0px !important;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+	.mob-rep{
+	  display:none !important;
+	}
+	/*body.vertical-layout.vertical-menu .content, body.vertical-layout.vertical-menu .footer{
+	   margin-left:0 !important;
+	   width: 100% !important;
+	}
+	body.vertical-layout.vertical-menu .main-menu, body.vertical-layout.vertical-menu .navbar-header {
+		width: 0 !important;
+	}*/
+}
+
+.menu-dbcmrm{
+  /* background-image: url(https://dbcmaram.ac.in/UgAdmissionReg2021/images/College.png) !important; */
+  box-shadow: inset 0 0 0 1000px rgba(8,133,54,0.5);
+height: 100% !important;
+}
+
+.main-menu.menu-light .navigation-background::after {
+	background:none;
+}
+.brand-text{
+    display:none !important;
+}
+body.vertical-layout[data-color="bg-gradient-x-purple-blue"] .content-wrapper-before{
+    /*background-image:none !important;*/
+}
+.personal-wrapper{
+	background-image:none !important;
+}
+.mark-back{
+	background-image:none !important;
+}
+.navbar-container{
+    background:none;
+}
+body.vertical-layout[data-color="bg-gradient-x-purple-blue"] .navbar-container{
+   background-image:none !important;
+}
+.match-height{
+   margin-right: 0px !important;
+   margin-left: 0px !important;
+}
+.main-menu.menu-fixed{
+   background-repeat: no-repeat;
+   width:305px;
+}
+.card-body{
+   padding-left: 30px;
+   padding-right: 65px;
+}
+.top-wrapper{
+   background: #e3e7ea;
+}
+.header-back{
+	background: none;
+}
+.btn-bottom{
+  padding-bottom: 25px;
+}
+.btn-save{
+  /* background-color: #d78033; */
+  /* border:1px solid #d78033; */
+  background-color: #992925;
+border: 1px solid #fff;
+}
+.btn-save:hover{
+  background-color: #0a5398;
+  border:1px solid #0a5398;
+}
+.bg-maintenance-image {
+    background-image: url(https://dbcmaram.ac.in/UgAdmissionReg2021/images/College.png) !important;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+	/* box-shadow: inset 0 0 0 1000px rgba(8,133,54,0.5) !important; */
+	/* height: 100% !important; */
+}
+.breadcrumb, .card, .card-footer, .card-header, .page-link {
+    background-color: #fff !important;
+	/* background: rgba(5,136,212,0.6) !important; */
+}
+/* .card-header{background: rgba(5,136,212,0.6) !important;} */
+.match-height {
+  background:#fff;
+}
+.frm-space{
+  padding:0 !important;
+}
+.btn-dwn{
+  position: relative;
+  top: 26px;
+}
+.mark-wrapper{
+	padding: 2.2rem;
+	margin-top: -28px;
+}
+.page-link {
+    color: #6967ce !important;
+}
+.online-reg{
+    margin-left: 25%;
+}
+.main-img{
+    display:none;
+}
+.blank-page .content-wrapper .flexbox-container{
+    height:100% !important;
+}
+
+@media (max-width:767px){
+   .blink {
+    background: #0588d4;
+    padding: 5.5%;
+    color: white;
+    font-size: 10px !important;
+    border-radius: 9px;
+    clear: both;
+}
+  .btn-primary{
+      padding-right:51px !important;
+  }
+  .footer-light {
+  background: #e4fee3;
+  border-top: 3px solid #f5eb12;
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+}
+.card-body {
+  background: rgba(45, 131, 223, 0.2) !important;
+  padding-bottom: 100px;
+}
+}
